@@ -1,264 +1,252 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <title>⚡ VIP Hacker Store</title>  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <style>  
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Courier New', monospace;}  
-    body {  
-      background: black;  
-      color: #00ffea;  
-      padding: 20px;  
-      background-image: linear-gradient(120deg, #000000 0%, #001a1a 100%);  
-      background-size: cover;  
-      background-attachment: fixed;  
-      overflow-x: hidden;  
-    }  
-    h1 {  
-      text-align: center;  
-      margin-bottom: 20px;  
-      font-size: 2.2em;  
-      color: #00ffea;  
-      text-shadow: 0 0 10px #00fff7;  
-    }  
-    .store {  
-      display: grid;  
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
-      gap: 20px;  
-    }  
-    .app {  
-      background: rgba(0, 255, 234, 0.05);  
-      padding: 15px;  
-      border-radius: 10px;  
-      border: 1px solid #00ffea;  
-      box-shadow: 0 0 15px rgba(0,255,255,0.3);  
-      transition: transform 0.3s ease;  
-    }  
-    .app:hover {  
-      transform: scale(1.05);  
-    }  
-    .app img {  
-      width: 100%;  
-      height: 120px;  
-      object-fit: contain;  
-      border-radius: 8px;  
-      background: #000;  
-      border: 1px solid #00ffee;  
-    }  
-    .app-name {  
-      font-size: 1.1em;  
-      margin-top: 10px;  
-      font-weight: bold;  
-    }  
-    .desc {  
-      font-size: 0.85em;  
-      color: #80ffff;  
-      margin-top: 5px;  
-    }  
-    .free {  
-      color: #0f0;  
-      font-size: 0.9em;  
-      margin-top: 5px;  
-    }  
-    .btn {  
-      background: linear-gradient(90deg,#00f0ff,#ff00d4);  
-      padding: 10px;  
-      border: none;  
-      width: 100%;  
-      color: white;  
-      margin-top: 10px;  
-      border-radius: 8px;  
-      font-weight: bold;  
-      cursor: pointer;  
-      box-shadow: 0 0 10px #00ffee;  
-    }  
-    footer {  
-      margin-top: 40px;  
-      text-align: center;  
-      font-size: 0.9em;  
-      color: #888;  
-    }  
-    footer span {  
-      color: #ff00cc;  
-      cursor: pointer;  
-    }  
-    .admin-panel {  
-      display: none;  
-      max-width: 500px;  
-      margin: auto;  
-      background: #000;  
-      padding: 20px;  
-      border-radius: 10px;  
-      border: 1px solid #00ffee;  
-      box-shadow: 0 0 20px cyan;  
-    }  
-    input, textarea {  
-      width: 100%;  
-      padding: 10px;  
-      margin: 10px 0;  
-      background: #000;  
-      color: #0ff;  
-      border: 1px solid #00ffea;  
-      border-radius: 6px;  
-    }  
-    .app-list {  
-      margin-top: 20px;  
-    }  
-    .app-item {  
-      display: flex;  
-      justify-content: space-between;  
-      margin: 5px 0;  
-      padding: 10px;  
-      background: #001818;  
-      border-radius: 6px;  
-      border: 1px solid #00ffee;  
-    }  
-    .app-item button {  
-      background: red;  
-      color: white;  
-      padding: 5px 10px;  
-      border: none;  
-      border-radius: 4px;  
-    }  
-    .edit-btn {  
-      background: orange;  
-      margin-right: 5px;  
-    }  
-    .backBtn {  
-      margin-top: 20px;  
-      background: #00ff90;  
-      color: black;  
-      font-weight: bold;  
-      padding: 10px;  
-      border: none;  
-      border-radius: 6px;  
-    }  
-  </style>  
-</head>  
-<body>    <h1>⚡ VIP Hacker Store</h1>  
-  <div id="userStore">  
-    <div class="store" id="storeContainer"></div>  
-    <footer>© 2025 VIP — <span onclick="secretClickAccess()">Admin Access</span></footer>  
-  </div>    <div class="admin-panel" id="adminPanel">  
-    <h2>🔐 Admin Panel</h2>  
-    <input type="text" id="appName" placeholder="App Name">  
-    <input type="text" id="appImg" placeholder="App Image URL">  
-    <textarea id="appDesc" placeholder="App Description"></textarea>  
-    <input type="number" id="appRating" placeholder="User Rating (1-5)">  
-    <input type="text" id="appLink" placeholder="Real Download URL">  
-    <button onclick="addOrUpdateApp()">Save App</button>  
-    <div class="app-list" id="appList"></div>  
-    <button class="backBtn" onclick="closeAdminPanel()">🔙 Back to Store</button>  
-  </div>    <script>  
-    let apps = JSON.parse(localStorage.getItem('apps')) || [  
-      {name:"Paytm",img:"https://upload.wikimedia.org/wikipedia/commons/5/5e/Paytm_logo.png",desc:"Send money instantly.",rating:5, link:"https://paytm.com"},  
-      {name:"WhatsApp",img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",desc:"Chat with friends.",rating:4, link:"https://whatsapp.com"}  
-    ];  
-    let clickCount = 0, clickTimer, editIndex = null;  
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VIP HACK Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      background: #000; color: #fff; font-family: sans-serif; margin: 0; overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+    .banner {
+      background: linear-gradient(45deg, #ff0080, #00c6ff);
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid #0ff;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .search-bar input {
+      padding: 8px; width: 80%; border-radius: 10px; border: none;
+    }
+    .category-filter { text-align: center; margin: 10px; }
+    .category-filter button {
+      margin: 5px; padding: 5px 10px;
+      background: rgba(0,255,255,0.2);
+      color: #0ff; border: none; border-radius: 8px;
+      cursor: pointer;
+    }
+    .app-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 10px;
+      justify-content: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 8px #0ff;
+    }
+    .card img {
+      width: 100px; height: 100px; object-fit: contain; border-radius: 10px;
+    }
+    .btn {
+      background: linear-gradient(to right, #00c6ff, #ff0080);
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    footer { text-align: center; margin-top: 20px; }
+    footer img { margin: 0 5px; }
+
+    /* RGB animation theme */
+    @keyframes rgb-bg {
+      0% { background-color: red; }
+      33% { background-color: lime; }
+      66% { background-color: blue; }
+      100% { background-color: red; }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; color:#0ff;">⚡ VIP { HACK } Store ⚡</h1>
+  <div style="text-align:center; margin: 10px;">
+    <label for="themeSelector">🎨 Select Theme:</label>
+    <select id="themeSelector" onchange="changeTheme()">
+      <option value="default">Default</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="hacker">Hacker</option>
+      <option value="neon">Neon</option>
+      <option value="rgb">RGB</option>
+      <option value="sunset">Sunset</option>
+      <option value="galaxy">Galaxy</option>
+      <option value="aqua">Aqua</option>
+      <option value="matrix">Matrix</option>
+      <option value="fire">Fire</option>
+    </select>
+  </div>
+
+  <div class="banner" id="promoBanner">This hack made by:- ❤️PRAVIN KEWAT❤️</div>
   
-    function renderApps() {  
-      const box = document.getElementById('storeContainer');  
-      box.innerHTML = '';  
-      apps.forEach((a) => {  
-        box.innerHTML += `  
-          <div class="app">  
-            <img src="${a.img}">  
-            <div class="app-name">${a.name}</div>  
-            <div class="desc">${a.desc}</div>  
-            <div class="free">★ ${'★'.repeat(a.rating)}</div>  
-            <a href="${a.link}" target="_blank"><button class="btn">Download</button></a>  
-          </div>  
-        `;  
-      });  
-    }  
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search apps..." oninput="handleSearch()">
+  </div>
   
-    function secretClickAccess() {  
-      clickCount++;  
-      clearTimeout(clickTimer);  
-      if (clickCount >= 5) {  
-        document.getElementById("userStore").style.display = "none";  
-        document.getElementById("adminPanel").style.display = "block";  
-        renderAdminApps();  
-        clickCount = 0;  
-      } else {  
-        clickTimer = setTimeout(() => clickCount = 0, 2000);  
-      }  
-    }  
-  
-    function renderAdminApps() {  
-      const list = document.getElementById('appList');  
-      list.innerHTML = '';  
-      apps.forEach((a, i) => {  
-        list.innerHTML += `  
-          <div class="app-item">  
-            <span>${a.name}</span>  
-            <div>  
-              <button class="edit-btn" onclick="editApp(${i})">Edit</button>  
-              <button onclick="deleteApp(${i})">Delete</button>  
-            </div>  
-          </div>  
-        `;  
-      });  
-    }  
-  
-    function addOrUpdateApp() {  
-      const name = document.getElementById('appName').value.trim();  
-      const img = document.getElementById('appImg').value.trim();  
-      const desc = document.getElementById('appDesc').value.trim();  
-      const rating = parseInt(document.getElementById('appRating').value);  
-      const link = document.getElementById('appLink').value.trim();  
-  
-      if (!name || !img || !desc || !link || rating < 1 || rating > 5) {  
-        alert("Please fill all fields correctly.");  
-        return;  
-      }  
-  
-      const appData = {name, img, desc, rating, link};  
-      if (editIndex !== null) {  
-        apps[editIndex] = appData;  
-        editIndex = null;  
-      } else {  
-        apps.push(appData);  
-      }  
-  
-      localStorage.setItem('apps', JSON.stringify(apps));  
-      clearForm();  
-      renderAdminApps();  
-      renderApps();  
-    }  
-  
-    function editApp(i) {  
-      const a = apps[i];  
-      document.getElementById('appName').value = a.name;  
-      document.getElementById('appImg').value = a.img;  
-      document.getElementById('appDesc').value = a.desc;  
-      document.getElementById('appRating').value = a.rating;  
-      document.getElementById('appLink').value = a.link;  
-      editIndex = i;  
-    }  
-  
-    function deleteApp(i) {  
-      if (confirm("Delete this app?")) {  
-        apps.splice(i, 1);  
-        localStorage.setItem('apps', JSON.stringify(apps));  
-        renderAdminApps();  
-        renderApps();  
-      }  
-    }  
-  
-    function clearForm() {  
-      document.getElementById('appName').value = '';  
-      document.getElementById('appImg').value = '';  
-      document.getElementById('appDesc').value = '';  
-      document.getElementById('appRating').value = '';  
-      document.getElementById('appLink').value = '';  
-    }  
-  
-    function closeAdminPanel() {  
-      document.getElementById("adminPanel").style.display = "none";  
-      document.getElementById("userStore").style.display = "block";  
-    }  
-  
-    renderApps();  
-  </script>  </body>  
+  <div class="category-filter" id="categoryFilter"></div>
+  <div class="app-container" id="appList"></div>
+  <footer>
+    <p>© 2025 VIP HACK STORE BY - PRAVIN KEWAT</p>
+    <p>
+      <a href="#"><img src="https://img.icons8.com/color/48/youtube-play.png" width="30"></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/telegram-app.png" width="30"></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png" width="30"></a>
+    </p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAIZsYfgVVn39G0fdeysM6mQxscWp9qAoo",
+      authDomain: "vip-hack-store-9a00e.firebaseapp.com",
+      databaseURL: "https://vip-hack-store-9a00e-default-rtdb.firebaseio.com",
+      projectId: "vip-hack-store-9a00e",
+      storageBucket: "vip-hack-store-9a00e.appspot.com",
+      messagingSenderId: "322482319195",
+      appId: "1:322482319195:web:14ffc3f7d898bf60b9347e"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    const appList = document.getElementById('appList');
+    const banner = document.getElementById('promoBanner');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const searchInput = document.getElementById('searchInput');
+
+    let allApps = [];
+    let activeCategory = "All";
+
+    db.ref('banner').once('value', snap => {
+      banner.textContent = snap.val() || "This store made by :- ❤️PRAVIN KEWAT❤️!";
+    });
+
+    db.ref('apps').on('value', snapshot => {
+      allApps = [];
+      snapshot.forEach(child => {
+        allApps.push({ key: child.key, ...child.val() });
+      });
+      renderCategories();
+      renderApps();
+    });
+
+    function renderCategories() {
+      const cats = ["All", ...new Set(allApps.map(app => app.category || "All"))];
+      categoryFilter.innerHTML = '';
+      cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.innerText = cat;
+        btn.onclick = () => {
+          activeCategory = cat;
+          renderApps();
+        };
+        categoryFilter.appendChild(btn);
+      });
+    }
+
+    function renderApps() {
+      appList.innerHTML = '';
+      let apps = allApps;
+
+      if (activeCategory !== "All") {
+        apps = apps.filter(app => app.category === activeCategory);
+      }
+
+      const query = searchInput.value.toLowerCase();
+      if (query) {
+        apps = apps.filter(app => app.name.toLowerCase().includes(query));
+      }
+
+      // Featured first
+      apps.sort((a,b) => (b.featured === true) - (a.featured === true));
+
+      apps.forEach(app => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${app.image}" alt="${app.name}">
+          <h3>${app.name}</h3>
+          <p>${app.version || ""} ${app.featured ? "🌟" : ""}</p>
+          <p style="color:lime;">FREE</p>
+          <button class="btn" onclick="downloadApp('${app.key}', '${app.downloadLink}')">Download</button>
+        `;
+        appList.appendChild(card);
+      });
+    }
+
+    function handleSearch() {
+      renderApps();
+    }
+
+    function downloadApp(key, link) {
+      const appRef = db.ref('apps/' + key + '/downloadCount');
+      appRef.transaction(current => (current || 0) + 1);
+      window.open(link, '_blank');
+    }
+
+    function changeTheme() {
+      const theme = document.getElementById('themeSelector').value;
+      document.body.style.animation = '';
+      document.body.style.background = '';
+      document.body.style.color = '';
+
+      switch(theme) {
+        case 'dark':
+          document.body.style.background = '#000';
+          document.body.style.color = '#0ff';
+          break;
+        case 'light':
+          document.body.style.background = '#fff';
+          document.body.style.color = '#000';
+          break;
+        case 'hacker':
+          document.body.style.background = '#000';
+          document.body.style.color = '#0f0';
+          break;
+        case 'neon':
+          document.body.style.background = '#111';
+          document.body.style.color = '#39ff14';
+          break;
+        case 'rgb':
+          document.body.style.animation = 'rgb-bg 5s infinite';
+          document.body.style.color = '#fff';
+          break;
+        case 'sunset':
+          document.body.style.background = 'linear-gradient(to right, #ff7e5f, #feb47b)';
+          document.body.style.color = '#000';
+          break;
+        case 'galaxy':
+          document.body.style.background = 'linear-gradient(45deg, #0f0c29, #302b63, #24243e)';
+          document.body.style.color = '#fff';
+          break;
+        case 'aqua':
+          document.body.style.background = 'linear-gradient(to right, #13547a, #80d0c7)';
+          document.body.style.color = '#000';
+          break;
+        case 'matrix':
+          document.body.style.background = '#000';
+          document.body.style.color = '#0f0';
+          break;
+        case 'fire':
+          document.body.style.background = 'linear-gradient(to right, #ff4e50, #f9d423)';
+          document.body.style.color = '#000';
+          break;
+        default:
+          document.body.style.background = '#000';
+          document.body.style.color = '#fff';
+      }
+    }
+  </script>
+</body>
 </html>
